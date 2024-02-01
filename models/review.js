@@ -15,22 +15,22 @@ Review.init(
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
-          },
-          movie_review:
-          {
-            type: INTEGER, 
+        },
+        movie_review:
+        {
+            type: INTEGER,
             validate: {
                 max: 5,
                 min: 1,
             }
-          },
-          user_id: {
-            type: DataTypes.INTEGER, 
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
             references: {
-                model: 'user', 
-                key: 'id', 
+                model: 'user',
+                key: 'id',
             }
-          }
+        }
     },
     {
         sequelize,
