@@ -41,4 +41,4 @@ Review.init(
     }
 )
 
-module.exports = Review
+module.exports = Review;
