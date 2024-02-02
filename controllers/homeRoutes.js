@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Movie, Review, User } = require('../models');
 const withAuth = require('../utils/auth')
 
+
 router.get('/', async (req, res) => {
     try {
         const movieData = await Movie.findAll({
@@ -79,3 +80,5 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
+
+
