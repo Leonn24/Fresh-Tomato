@@ -26,14 +26,18 @@ Movie.init(
           },
           title: {
             type: DataTypes.STRING, 
+          }, 
+          imdbID:{
+            type :DataTypes.STRING ,
+            unique :true
           }
     },
     {
         sequelize,
-        timestamps: true,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'review',
+        modelName: 'movie',
     }
 )
 
