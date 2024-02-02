@@ -1,30 +1,16 @@
-function getMovie() {
-    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=8828c04b`)
-    return response.json();
+
+async function getMovie() {
+    const response = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=8828c04b`)
+    const movie = await response.json();
+    console.log(movie.Title);
+    console.log(movie.Genre);
+    console.log(movie.Actors);
+    console.log(movie.Plot);
+    console.log(movie.Released);
+    console.log(movie.Poster);
+    console.log(movie.imdbRating);
 }
-console.log(response)
-//         .then(function (response) {
-//     return response.json();
-// })
-// console.log(response)
-// var response = [];
+(async () => {
+    await getMovie();
+});
 
-// // for (var i = 0; i < response.list; i++) {
-//     var listItem = response.list;
-
-//     var movieData = {
-//         title: listItem.Title,
-//         genre: listItem.Genre,
-//         actors: listItem.Actors,
-//         plot: listItem.Plot,
-//         date: listItem.Released,
-//         poster: listItem.Poster,
-//         rating: listItem.imdbRating
-//     };
-//     console.log(movieData)
-// }
-
-
-// }
-
-getMovie();
