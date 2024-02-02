@@ -1,52 +1,40 @@
-const { DataTypes } = require('sequelize');
+const { Model, DataTypes, INTEGER } = require('sequelize');
 const sequelize = require('../config/connection');
+
 class Movie extends Model { }
+
 Movie.init(
     {
-        title: {
-            type: DataTypes.STRING,
+        id: {
+            type: DataTypes.INTEGER,
             allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
         },
-        genre: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        actors: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        
-        plot:{
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        releaseDate: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-        },
-        imdbRating: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
+        released: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW,
+          },
+          rating:
+          {
+            type: INTEGER, 
             validate: {
-                max: 10,
+                max: 5,
                 min: 1,
-            },
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
             }
-        }
-
+          },
+          title: {
+            type: DataTypes.STRING, 
+          }
     },
     {
         sequelize,
-        // timestamps: true,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'movie',
+        modelName: 'review',
     }
 )
+
 module.exports = Movie;
