@@ -3,20 +3,20 @@
 {{#*inline "pageTitle"}}Home{{/inline}}
 
 {{#*inline "body"}}
-  <section class="welcome-section">
-    <h1>Welcome to the Movie Reviews App!</h1>
+<section class="welcome-section">
+    <h1>Welcome to Fresh Tomato!</h1>
     <p>Explore and rate the top trending movies.</p>
-  </section>
+</section>
 
-  <section class="top-movies">
+<section class="top-movies">
     <h2>Top Trending Movies</h2>
     {{#each movies}}
-      <div class="movie">
+    <div class="movie">
         <h3>{{title}}</h3>
         <p>Genre: {{genre}}</p>
         <p>Release Year: {{releaseYear}}</p>
         <p class="rating">Rating: {{rating}}/5</p>
-      </div>
+    </div>
     {{/each}}
-  </section>
+</section>
 {{/inline}}

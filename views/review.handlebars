@@ -3,34 +3,38 @@
 {{#*inline "pageTitle"}}{{movie.title}}{{/inline}}
 
 {{#*inline "body"}}
-  <section class="movie-details">
-    <h2>{{movie.title}}</h2>
-    <p>Genre: {{movie.genre}}</p>
-    <p>Release Year: {{movie.releaseYear}}</p>
+<section class="movie-details">
+  <h2>{{movie.title}}</h2>
+  <p>Genre: {{movie.genre}}</p>
+  <p>Release Year: {{movie.releaseYear}}</p>
+  <p>Actors: {{actors}}</p>
+  <p>Plot: {{plot}}</p>
+  <p>Poster: {{poster}}</p>
+  <p>IMDB Rating: {{imdbRating}}</p>
 
-    <h3>Rate this Movie</h3>
-    <form action="/api/reviews" method="POST">
-      <label for="rating">Rating:</label>
-      <select name="rating" required>
-        <option value="1">1 Star</option>
-        <option value="2">2 Stars</option>
-        <option value="3">3 Stars</option>
-        <option value="4">4 Stars</option>
-        <option value="5">5 Stars</option>
-      </select>
+  <h3>Rate this Movie</h3>
+  <form action="/api/reviews" method="POST">
+    <label for="rating">Rating:</label>
+    <select name="rating" required>
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select>
 
-      <button type="submit">Submit Rating</button>
-    </form>
-  </section>
+    <button type="submit">Submit Rating</button>
+  </form>
+</section>
 
-  <section class="reviews">
-    <h3>User Ratings</h3>
-    {{#if movie.reviews.length}}
-      {{#each movie.reviews}}
-        <p class="user-rating">User {{userId}}: {{rating}}/5</p>
-      {{/each}}
-    {{else}}
-      <p>No user ratings yet. Be the first to rate this movie!</p>
-    {{/if}}
-  </section>
+<section class="reviews">
+  <h3>User Ratings</h3>
+  {{#if movie.reviews.length}}
+  {{#each movie.reviews}}
+  <p class="user-rating">User {{userId}}: {{rating}}/5</p>
+  {{/each}}
+  {{else}}
+  <p>No user ratings yet. Be the first to rate this movie!</p>
+  {{/if}}
+</section>
 {{/inline}}
