@@ -5,27 +5,45 @@ const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
     try {
-        const movieData = await Movie.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-            ],
-        });
+        // const movieData = await Movie.findAll({
+        //     include: [
+        //         {
+        //             model: User,
+        //             attributes: ['name'],
+        //         },
+        //     ],
+        // });
 
 
-        const movies = movieData.map((movie) => movie.get({ plain: true }));
+        // const movies = movieData.map((movie) => movie.get({ plain: true }));
 
-
+        const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=06bd5d86a4a2e284a00d4ca47ecaf34b';
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNmJkNWQ4NmE0YTJlMjg0YTAwZDRjYTQ3ZWNhZjM0YiIsInN1YiI6IjY1YmM0YWQ4MTFjMDY2MDBlNWNmMzk3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Bkko_zrGBZFmzOkns4vFcTMo35_XlsA40CnpzTnoS5M'
+            }
+        };
+        const response = await fetch(url, options);
+        const json = await response.json();
+        const movies = json.results.map(movie => ({
+            title: movie.title,
+            overview: movie.overview,
+            poster: movie.poster_path,
+            release: movie.release_date,
+            id: movie.id
+        }));
+        console.log(movies)
         res.render('homepage', {
-            projects,
+            movies,
             logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
 
 router.get('/movie/:id', async (req, res) => {
     try {
