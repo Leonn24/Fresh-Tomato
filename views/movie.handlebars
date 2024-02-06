@@ -1,0 +1,12 @@
+<h2>All Movies</h2>
+{{#each movies}}
+<div class="movie">
+    <h3>{{title}}</h3>
+    <p>Genre: {{genre}}</p>
+    <p>Release Year: {{releaseYear}}</p>
+    <p>Actors: {{actors}}</p>
+    <p>Plot: {{plot}}</p>
+    {{!-- <p>Poster: {{poster}}</p> --}}
+    <p>IMDB Rating: {{imdbRating}}</p>
+</div>
+{{/each}}
