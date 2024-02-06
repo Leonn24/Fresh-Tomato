@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Movie, Review, User } = require('../models');
 const withAuth = require('../utils/auth')
 
-
 router.get('/', async (req, res) => {
     try {
 
@@ -48,7 +47,7 @@ router.get('/movie/:id', async (req, res) => {
         const movie = movieData.get({ plain: true });
 
         res.render('movie', {
-            ...project,
+            ...movie,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -87,5 +86,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-
