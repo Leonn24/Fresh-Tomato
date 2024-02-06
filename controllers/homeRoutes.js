@@ -28,7 +28,38 @@ router.get('/', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
-       
+
+    }
+});
+
+
+router.get('/movie/search', async (req, res) => {
+    try {
+        console.log(req.originalUrl)
+        const movieName = req.query.movieName
+        const apiKey = '8828c04b';
+        const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`;
+        console.log(url);
+        const response = await fetch(url);
+        const json = await response.json();
+        console.log(json);
+        const data = json
+        const movies = [{
+            title: data.Title,
+            genre: data.Genre,
+            actors: data.Actors,
+            plot: data.Plot,
+            released: data.Released,
+            poster: data.Poster,
+            imdbRating: data.imdbRating
+        }];
+        console.log(movies)
+        res.render('movie', {
+            movies,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+
     }
 });
 

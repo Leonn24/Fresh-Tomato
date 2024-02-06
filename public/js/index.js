@@ -1,26 +1,10 @@
 async function getMovieInfo(movieName) {
-    const apiKey = '8828c04b';
-    const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`;
+  const url = `http://localhost:3001/movie/search?movieName=${movieName}`;
   
     try {
       const response = await fetch(url);
-      const data = await response.json();
+      await response.json();
   
-      if (response.ok) {
-        return {
-          title: data.Title,
-          genre: data.Genre,
-          actors: data.Actors,
-          plot: data.Plot,
-          released: data.Released,
-          poster: data.Poster,
-          imdbRating: data.imdbRating,
-          imdbID: data.imdbID
-        };
-        
-      } else {
-        throw new Error(data.Error);
-      }
     } catch (error) {
       console.error('Error fetching movie information:', error.message);
       return null;
