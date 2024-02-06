@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Movie, Review, User } = require('../models');
 const withAuth = require('../utils/auth')
 
-
 router.get('/', async (req, res) => {
     try {
         const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=06bd5d86a4a2e284a00d4ca47ecaf34b';
@@ -28,7 +27,7 @@ router.get('/', async (req, res) => {
             logged_in: req.session.logged_in
         });
     } catch (err) {
-        res.status(500).json(err);
+       
     }
 });
 
@@ -47,7 +46,7 @@ router.get('/movie/:id', async (req, res) => {
         const movie = movieData.get({ plain: true });
 
         res.render('movie', {
-            ...project,
+            ...movie,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -86,5 +85,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-
