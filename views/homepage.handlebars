@@ -1,22 +1,19 @@
-{{> layouts/main}}
-
-{{#*inline "pageTitle"}}Home{{/inline}}
-
-{{#*inline "body"}}
-<section class="welcome-section">
-    <h1>Welcome to Fresh Tomato!</h1>
-    <p>Explore and rate the top trending movies.</p>
-</section>
-
-<section class="top-movies">
-    <h2>Top Trending Movies</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trending Movies</title>
+</head>
+<body>
+  <h1>Trending Movies</h1>
+  <ul>
     {{#each movies}}
-    <div class="movie">
-        <h3>{{title}}</h3>
-        <p>Genre: {{genre}}</p>
-        <p>Release Year: {{releaseYear}}</p>
-        <p class="rating">Rating: {{rating}}/5</p>
-    </div>
+      <li>
+        <h2>{{title}}</h2>
+        <p>{{overview}}</p>
+        <img src="https://image.tmdb.org/t/p/w500{{poster}}" alt="{{title}}">
+        <p>Release Date: {{release}}</p>
+      </li>
     {{/each}}
-</section>
-{{/inline}}
+  </ul>
+</body>
+</html>
