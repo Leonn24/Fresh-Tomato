@@ -22,7 +22,6 @@ router.get('/', async (req, res) => {
             release: movie.release_date,
             id: movie.id
         }));
-        console.log(movies)
         res.render('homepage', {
             movies,
             logged_in: req.session.logged_in
@@ -33,33 +32,45 @@ router.get('/', async (req, res) => {
 });
 
 
-router.get('/movie/search', async (req, res) => {
+router.get('/movie/search/:movie', async (req, res) => {
     try {
         console.log(req.originalUrl)
-        const movieName = req.query.movieName
+        const movieName = req.params.movie
         const apiKey = '8828c04b';
         const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`;
-        console.log(url);
         const response = await fetch(url);
         const json = await response.json();
-        console.log(json);
         const data = json
-        const movies = [{
+    
+        console.log(data,'hello')
+        const newMovie = await Movie.create({
             title: data.Title,
             genre: data.Genre,
             actors: data.Actors,
             plot: data.Plot,
             released: data.Released,
             poster: data.Poster,
-            imdbRating: data.imdbRating
-        }];
-        console.log(movies)
+            imdb_rating: data.imdbRating,
+            imdb_id: data.imdbID
+        })
+     
+        const movie = {
+            id:  newMovie.id,
+            title: data.Title,
+            genre: data.Genre,
+            actors: data.Actors,
+            plot: data.Plot,
+            released: data.Released,
+            poster: data.Poster,
+            imdb_rating: data.imdbRating
+        };
+
         res.render('movie', {
-            movies,
+            ...movie,
             logged_in: req.session.logged_in
         });
     } catch (err) {
-
+        console.log(err)
     }
 });
 

@@ -1,12 +1,26 @@
-<h2>Movie</h2>
-{{#each movies}}
 <div class="movie">
-    <h3>{{title}}</h3>
+     <h3>{{title}}</h3>
+    <img src={{poster}}>
     <p>Genre: {{genre}}</p>
     <p>Actors: {{actors}}</p>
     <p>Plot: {{plot}}</p>
-    <p>Release Year: {{releaseYear}}</p>
-    <p>Poster: {{poster}}</p>
+    <p>Release Year: {{released}}</p>
     <p>IMDB Rating: {{imdbRating}}</p>
+
+   
+    <h3>Rate this Movie</h3>
+  <form action="/api/review" method="POST">
+    <label for="rating">Rating:</label>
+    <select name="rating" required>
+      <option value="1">1 Star</option>
+      <option value="2">2 Stars</option>
+      <option value="3">3 Stars</option>
+      <option value="4">4 Stars</option>
+      <option value="5">5 Stars</option>
+    </select>
+
+    <button type="submit">Submit Rating</button>
+  </form>
+
+
 </div>
-{{/each}}
