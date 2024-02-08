@@ -5,3 +5,16 @@
   ul {
     width: 100%;
   }
+
+  div .rating {
+    position: relative;
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+
+  }

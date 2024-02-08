@@ -5,24 +5,22 @@
     <p>Actors: {{actors}}</p>
     <p>Plot: {{plot}}</p>
     <p>Release Year: {{released}}</p>
-    <p>IMDB Rating: {{imdbRating}}</p>
+    <p>IMDB Rating: {{imdb_rating}}</p>
 
    
     <h3>Rate this Movie</h3>
-  <form action="/api/review" method="POST">
-    <label for="rating">Rating:</label>
-    <select name="rating" required>
-      <option value="1">1 Star</option>
-      <option value="2">2 Stars</option>
-      <option value="3">3 Stars</option>
-      <option value="4">4 Stars</option>
-      <option value="5">5 Stars</option>
+    <div class="rating">
+      <form class="review-movie">
+      <input type="radio" name="rating" value="0"/>
+      <input type="radio" name="rating" value="1"/>
+      <input type="radio" name="rating" value="2"/>
+      <input type="radio" name="rating" value="3"/>
+      <input type="radio" name="rating" value="4"/>
     </select>
-
-    <button type="submit">Submit Rating</button>
+    </div>
+    <button onclick="submitReviewHandler(event, {{id}})" type="submit">Submit Rating</button>
   </form>
 
 
 </div>
-
-{{/each}}
+<script src="../../../js/review.js"></script>
