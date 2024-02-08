@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const newReview = await Review.create(req.body);
-
+        await pool
         // Calculate the average rating for the movie
         const movieId = req.body.movieId;
         const movie = await Movie.findByPk(movieId, { include: Review });
