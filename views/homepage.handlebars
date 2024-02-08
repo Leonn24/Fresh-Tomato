@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Trending Movies</title>
-</head>
-<body>
-  <h1>Trending Movies</h1>
-  <ul>
-    {{#each movies}}
-      <li>
-        <h2>{{title}}</h2>
-        <p>{{overview}}</p>
-        <img src="https://image.tmdb.org/t/p/w500{{poster}}" alt="{{title}}">
-        <p>Release Date: {{release}}</p>
-      </li>
-    {{/each}}
-  </ul>
-</body>
-</html>
+<h1>Trending Movies</h1>
+<ul>
+  {{#each movies}}
+  <li>
+    <h2>{{title}}</h2>
+    <p>{{overview}}</p>
+    <img src="https://image.tmdb.org/t/p/w500{{poster}}" alt="{{title}}">
+    <p>Release Date: {{release}}</p>
+  </li>
+  {{/each}}
+</ul>
