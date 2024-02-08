@@ -64,24 +64,24 @@ router.put('/:id', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 })
-router.delete('/:id', async (req, res) => {
-  const movieId = req.params.id;
+// router.delete('/:id', async (req, res) => {
+//   const movieId = req.params.id;
 
-  try {
-    const movieToDelete = await Movie.findByPk(movieId);
+//   try {
+//     const movieToDelete = await Movie.findByPk(movieId);
 
-    if (!movieToDelete) {
-      return res.status(404).json({ error: 'Movie not found' });
-    }
+//     if (!movieToDelete) {
+//       return res.status(404).json({ error: 'Movie not found' });
+//     }
 
 
-    await movieToDelete.destroy();
+//     await movieToDelete.destroy();
 
-    res.json({ message: 'Movie deleted successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-});
+//     res.json({ message: 'Movie deleted successfully' });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// });
 
 module.exports = router;
