@@ -47,7 +47,7 @@ Movie.init(
     },
     imdb_id: {
       type: DataTypes.STRING,
-      unique: true
+      unique: false
     }
   },
 
