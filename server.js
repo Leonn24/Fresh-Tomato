@@ -31,9 +31,7 @@ const sess = {
 
 app.use(session(sess));
 
-app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
-app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
-app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
+
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
