@@ -4,18 +4,15 @@
 
 {{#*inline "body"}}
   <section class="user-profile">
-    <h2>Welcome, {{user.username}}!</h2>
+    <h2>Welcome, {{user.name}}!</h2>
     
     <h3>Your Reviews</h3>
-    {{#if user.reviews.length}}
+    {{#if user.review.length}}
       <ul class="user-reviews-list">
-        {{#each user.reviews}}
+        {{#each user.review}}
           <li>
             <p>Movie: {{movie.title}}</p>
-            <p>Rating: {{rating}}/5</p>
-            <p>{{comment}}</p>
-            <a href="/profile/edit-review/{{id}}">Edit</a>
-            <a href="/profile/delete-review/{{id}}">Delete</a>
+            <p>Rating: {{review.movie_review}}/5</p>
           </li>
         {{/each}}
       </ul>
