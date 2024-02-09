@@ -1,24 +1,20 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
+  ul {
+    width: 100%;
+  }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
+  div .rating {
+    position: relative;
+    width: 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
+  }

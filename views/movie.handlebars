@@ -1,0 +1,26 @@
+<div class="movie">
+     <h3>{{title}}</h3>
+    <img src={{poster}}>
+    <p>Genre: {{genre}}</p>
+    <p>Actors: {{actors}}</p>
+    <p>Plot: {{plot}}</p>
+    <p>Release Year: {{released}}</p>
+    <p>IMDB Rating: {{imdb_rating}}</p>
+
+   
+    <h3>Rate this Movie</h3>
+    <div class="rating">
+      <form class="review-movie">
+      <input type="radio" name="rating" value="0"/>
+      <input type="radio" name="rating" value="1"/>
+      <input type="radio" name="rating" value="2"/>
+      <input type="radio" name="rating" value="3"/>
+      <input type="radio" name="rating" value="4"/>
+    </select>
+    </div>
+    <button onclick="submitReviewHandler(event, {{id}})" type="submit">Submit Rating</button>
+  </form>
+
+
+</div>
+<script src="../../../js/review.js"></script>

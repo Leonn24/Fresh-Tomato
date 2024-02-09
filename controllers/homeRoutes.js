@@ -2,9 +2,9 @@ const router = require('express').Router();
 const { Movie, Review, User } = require('../models');
 const withAuth = require('../utils/auth')
 
-
 router.get('/', async (req, res) => {
     try {
+
         const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=06bd5d86a4a2e284a00d4ca47ecaf34b';
         const options = {
             method: 'GET',
@@ -22,13 +22,55 @@ router.get('/', async (req, res) => {
             release: movie.release_date,
             id: movie.id
         }));
-        console.log(movies)
         res.render('homepage', {
             movies,
             logged_in: req.session.logged_in
         });
     } catch (err) {
-        res.status(500).json(err);
+
+    }
+});
+
+
+router.get('/movie/search/:movie', async (req, res) => {
+    try {
+        console.log(req.originalUrl)
+        const movieName = req.params.movie
+        const apiKey = '8828c04b';
+        const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`;
+        const response = await fetch(url);
+        const json = await response.json();
+        const data = json
+    
+        console.log(data,'hello')
+        const newMovie = await Movie.create({
+            title: data.Title,
+            genre: data.Genre,
+            actors: data.Actors,
+            plot: data.Plot,
+            released: data.Released,
+            poster: data.Poster,
+            imdb_rating: data.imdbRating,
+            imdb_id: data.imdbID
+        })
+     
+        const movie = {
+            id:  newMovie.id,
+            title: data.Title,
+            genre: data.Genre,
+            actors: data.Actors,
+            plot: data.Plot,
+            released: data.Released,
+            poster: data.Poster,
+            imdb_rating: data.imdbRating
+        };
+
+        res.render('movie', {
+            ...movie,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        console.log(err)
     }
 });
 
@@ -47,7 +89,7 @@ router.get('/movie/:id', async (req, res) => {
         const movie = movieData.get({ plain: true });
 
         res.render('movie', {
-            ...project,
+            ...movie,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -86,5 +128,3 @@ router.get('/login', (req, res) => {
 });
 
 module.exports = router;
-
-
