@@ -34,16 +34,14 @@ router.get('/', async (req, res) => {
 
 router.get('/movie/search/:movie', async (req, res) => {
     try {
-        console.log(req.originalUrl)
         const movieName = req.params.movie
         const apiKey = '8828c04b';
         const url = `http://www.omdbapi.com/?t=${movieName}&apikey=${apiKey}`;
         const response = await fetch(url);
         const json = await response.json();
         const data = json
-    
-        console.log(data,'hello')
-        const newMovie = await Movie.create({
+
+        const movie = {
             title: data.Title,
             genre: data.Genre,
             actors: data.Actors,
@@ -52,23 +50,31 @@ router.get('/movie/search/:movie', async (req, res) => {
             poster: data.Poster,
             imdb_rating: data.imdbRating,
             imdb_id: data.imdbID
-        })
-     
-        const movie = {
-            id:  newMovie.id,
-            title: data.Title,
-            genre: data.Genre,
-            actors: data.Actors,
-            plot: data.Plot,
-            released: data.Released,
-            poster: data.Poster,
-            imdb_rating: data.imdbRating
-        };
+        }
+        try {
+            const existingMovie = await Movie.findOne({ where: { imdb_id: movie.imdb_id } });
+            if (!existingMovie) {
+                const newMovie = await Movie.create(movie);
+                console.log(newMovie)
+                res.render('movie', {
+                    ...newMovie.dataValues,
+                    logged_in: req.session.logged_in
+                });
+            } else {
+                console.log('existing movie', existingMovie)
+                res.render('movie', {
+                    ...existingMovie.dataValues,
+                    logged_in: req.session.logged_in
+                    
+                });
+            }
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
 
-        res.render('movie', {
-            ...movie,
-            logged_in: req.session.logged_in
-        });
+
+
     } catch (err) {
         console.log(err)
     }

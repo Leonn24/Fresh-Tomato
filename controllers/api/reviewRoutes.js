@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const { Review, Movie, User } = require('../../models');
-const { Review, Movie, User } = require('../../models');
 const sequelize = require('../../config/connection');
 
 
@@ -29,25 +28,7 @@ router.post('/:userId/:movieId', async (req, res) => {
             movie_review: req.body.review,
             movie_id: movieId,  
             user_id: userId
-
-            include:
-
-            {
-                model: Movie,
-                as: 'movie'
-            },
-
-            movie_review: req.body.rating,
-          
-           
-
-            // user_id: req.session.user_id,
-
-
-
         });
-       
-
         console.log('Review inserted successfully');
         res.status(200).send('Review inserted successfully');
     } catch (error) {
