@@ -32,13 +32,18 @@ Movie.init(
       allowNull: true,
       defaultValue: DataTypes.NOW,
     },
+    poster: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     imdb_rating: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
     imdb_id: {
       type: DataTypes.STRING,
-      unique: false
+      unique: false,
+      allowNull: true
     }
   },
 
