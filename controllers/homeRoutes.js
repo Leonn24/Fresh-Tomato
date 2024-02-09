@@ -4,7 +4,6 @@ const withAuth = require('../utils/auth')
 
 router.get('/', async (req, res) => {
     try {
-
         const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=06bd5d86a4a2e284a00d4ca47ecaf34b';
         const options = {
             method: 'GET',
