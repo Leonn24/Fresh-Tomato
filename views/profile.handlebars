@@ -1,26 +1,26 @@
-{{> layouts/main}}
+{{!-- {{> layouts/main}} --}}
 
-{{#*inline "pageTitle"}}User Profile{{/inline}}
+{{!-- {{#*inline "pageTitle"}}User Profile{{/inline}} --}}
 
-{{#*inline "body"}}
+{{!-- {{#*inline "body"}} --}}
   <section class="user-profile">
-    <h2>Welcome, {{user.username}}!</h2>
+    {{!-- <h2>Welcome, {{user.name}}!</h2> --}}
     
     <h3>Your Reviews</h3>
-    {{#if user.reviews.length}}
+    {{!-- {{#if user.reviews.length}}
       <ul class="user-reviews-list">
-        {{#each user.reviews}}
+        {{#each user.review}}
           <li>
             <p>Movie: {{movie.title}}</p>
-            <p>Rating: {{rating}}/5</p>
+            <p>Rating: {{review.movie.review}}/5</p>
             <p>{{comment}}</p>
             <a href="/profile/edit-review/{{id}}">Edit</a>
             <a href="/profile/delete-review/{{id}}">Delete</a>
           </li>
         {{/each}}
       </ul>
-    {{else}}
+    {{else}} --}}
       <p>No reviews yet. Start reviewing movies!</p>
-    {{/if}}
+    {{!-- {{/if}} --}}
   </section>
-{{/inline}}
+{{!-- {{/inline}} --}}

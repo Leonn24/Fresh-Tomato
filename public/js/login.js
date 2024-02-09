@@ -1,5 +1,5 @@
 const loginFormHandler = async (event) => {
-  event.preventDefault();
+
 
   // Collect values from the login form
   const email = document.querySelector('#email-login').value.trim();
@@ -14,9 +14,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      sessionStorage.setItem('user', JSON.stringify((await response.json()).user));
       // If successful, redirect the browser to the profile page
-      // document.location.replace('/profile');
+      document.location.replace('/profile');
     } else {
       alert(response.statusText);
     }
@@ -49,6 +48,6 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
-// document
-//   .querySelector('.signup-form')
-//   .addEventListener('submit', signupFormHandler);
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);
