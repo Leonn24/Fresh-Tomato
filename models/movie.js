@@ -32,15 +32,6 @@ Movie.init(
       allowNull: true,
       defaultValue: DataTypes.NOW,
     },
-
-    rating:
-    {
-      type: INTEGER,
-      validate: {
-        max: 5,
-        min: 1,
-      }
-    },
     imdb_rating: {
       type: DataTypes.INTEGER,
       allowNull: true

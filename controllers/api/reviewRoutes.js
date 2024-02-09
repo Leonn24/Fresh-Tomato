@@ -1,27 +1,32 @@
 const express = require('express');
 const router = express.Router();
-const { Review, Movie } = require('../../models');
+const { Review, Movie, User } = require('../../models');
 const sequelize = require('../../config/connection');
 
 
 
 
 
-router.post('/', async (req, res) => {
-    const { movie_review} = req.body;
-    console.log('hello');
-    console.log(req.body);
+router.post('/:userId/:movieId', async (req, res) => {
+   const userId = req.params.userId
+   const movieId = req.params.movieId
+
     try {
         const newReview = Review.create({
             include: [
                 {
                     model: Movie, 
                     attributes: ['id']
+                    
                 },
+                {
+                    model: User,
+                    attributes: ['id']
+                }
             ],
-            movie_review: req.body.rating,
-            movie_id: movie_id,
-            // user_id: user_id
+            movie_review: req.body.review,
+            movie_id: movieId,  
+            user_id: userId
         });
 
 
