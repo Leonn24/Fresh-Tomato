@@ -1,8 +1,6 @@
-const express = require('express');
-const router = express.Router();
-
-
-const { Movie } = require('../../models');
+// const express = require('express');
+// const router = express.Router();
+// const { Movie } = require('../../models');
 
 // router.post('/', async (req, res) => {
 //   try {
@@ -91,4 +89,4 @@ const { Movie } = require('../../models');
 //   }
 // });
 
-module.exports = router;
+// module.exports = router;

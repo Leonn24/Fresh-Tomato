@@ -30,7 +30,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-
 router.get('/movie/search/:movie', async (req, res) => {
     try {
         const movieName = req.params.movie
@@ -64,16 +63,13 @@ router.get('/movie/search/:movie', async (req, res) => {
                 res.render('movie', {
                     ...existingMovie.dataValues,
                     logged_in: req.session.logged_in
-                    
+
                 });
             }
         } catch (error) {
             console.error(error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
-
-
-
     } catch (err) {
         console.log(err)
     }
@@ -90,9 +86,7 @@ router.get('/movie/:id', async (req, res) => {
                 },
             ],
         });
-
         const movie = movieData.get({ plain: true });
-
         res.render('movie', {
             ...movie,
             logged_in: req.session.logged_in
@@ -105,36 +99,38 @@ router.get('/movie/:id', async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
     try {
-
-        const userData = await User.findOne({
+        const reviewData = await Review.findAll({
             where: {
-                id: req.session.user_id
-            }, 
-            // include: [Review]
+                user_id: req.session.user_id
+            },
+            include: [User, Movie]
         })
-        // const reviewData = await Review.findAll()
-        // console.log(reviewData);
 
-        const user = userData.get({ plain: true });
 
-        console.log(user);
+
+        const userReviews = reviewData.map((review) => review.get({ plain: true }))
+        // console.log(userReviews);
         res.render('profile', {
-            // ...user,
+            userReviews,
             logged_in: req.session.logged_in
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
 
 router.get('/login', (req, res) => {
-
     if (req.session.logged_in) {
         res.redirect('/profile');
         return;
     }
-
     res.render('login');
+});
+
+
+router.get('/homepage', (req, res) => {
+    res.render('homepage');
 });
 
 module.exports = router;

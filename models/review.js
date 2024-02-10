@@ -1,4 +1,4 @@
-const { Model, DataTypes, INTEGER } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Review extends Model { }
@@ -11,40 +11,33 @@ Review.init(
             primaryKey: true,
             autoIncrement: true
         },
-        date_created: {
-            type: DataTypes.DATE,
-            allowNull: false,
-            defaultValue: DataTypes.NOW,
-        },
         movie_review:
         {
-            type: INTEGER,
+            type: DataTypes.INTEGER,
             validate: {
                 max: 5,
                 min: 1,
             }
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'user',
-                key: 'id',
-            }
-        },
-        movie_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'movie',
-                key: 'id',
-            }
         }
+        // user_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'user',
+        //         key: 'id',
+        //     }
+        // },
+        // movie_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'movie',
+        //         key: 'id',
+        //     }
+        // }
     },
     {
         sequelize,
-        timestamps: true,
-        freezeTableName: true,
         underscored: true,
-        modelName: 'review',
+        modelName: 'Review',
     }
 )
 
