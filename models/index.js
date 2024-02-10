@@ -8,20 +8,20 @@ Movie.hasMany(Review, {
 
 Review.belongsTo(User, {
     foreignKey: 'user_id',
-
-});
-
-Review.belongsTo(Movie, {
-    foreignKey: 'movie_id',
-    onDelete: 'SET NULL',
-
-});
-
-User.hasMany(Review, {
-    foreignKey: 'user_id',
     onDelete: 'CASCADE'
-
 });
+
+// Review.belongsTo(Movie, {
+//     foreignKey: 'movie_id',
+//     onDelete: 'SET NULL',
+
+// });
+
+// User.hasMany(Review, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+
+// });
 
 module.exports = { User, Review, Movie };
 

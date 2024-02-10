@@ -106,16 +106,21 @@ router.get('/movie/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
     try {
 
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Movie }],
-        });
+        const userData = await User.findOne({
+            where: {
+                id: req.session.user_id
+            }, 
+            // include: [Review]
+        })
+        // const reviewData = await Review.findAll()
+        // console.log(reviewData);
 
         const user = userData.get({ plain: true });
 
+        console.log(user);
         res.render('profile', {
-            ...user,
-            logged_in: true
+            // ...user,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);

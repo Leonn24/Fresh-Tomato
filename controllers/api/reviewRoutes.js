@@ -7,8 +7,8 @@ const sequelize = require('../../config/connection');
 
 
 
-router.post('/:userId/:movieId', async (req, res) => {
-   const userId = req.params.userId
+router.post('/:movieId', async (req, res) => {
+//    const userId = req.params.userId
    const movieId = req.params.movieId
 
     try {
@@ -27,7 +27,7 @@ router.post('/:userId/:movieId', async (req, res) => {
             ],
             movie_review: req.body.review,
             movie_id: movieId,  
-            user_id: userId
+            user_id: req.session.user_id
         });
         console.log('Review inserted successfully');
         res.status(200).send('Review inserted successfully');
