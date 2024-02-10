@@ -1,30 +1,32 @@
-<div class="main-homepage">
-    <h1>Trending Movies</h1>
-    <style>
-      .carousel-item {
+{{!-- <div class="main-homepage">
+  <h1>Trending Movies</h1>
+  <style>
+    .carousel-item {
       height: 32rem;
       background: #777;
       position: relative;
-      }
-      .container {
+    }
+
+    .container {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
       padding-bottom: 50px;
-      }
-    </style>
+    }
+  </style>
 
 
- 
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" ></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" ></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" ></button>
-        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" ></button>
-      </div>
+
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+        aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"></button>
+    </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="container">
@@ -34,7 +36,7 @@
           </a>
         </div>
       </div>
-        <div class="carousel-item">
+      <div class="carousel-item">
         <div class="container">
           <h1>Example</h1>
           <a href="#" class="btn btn-lg btn-primary">
@@ -68,5 +70,18 @@
       </div>
     </div>
   </div>
-</div>  
+</div> --}}
 
+
+{{#each movies}}
+<div class="movie-card">
+  <h2>{{title}}</h2>
+  <img class="movie-p" src='https://image.tmdb.org/t/p/w500{{poster}}' alt='{{title}}'>
+  <div class="homepage-card">
+    <p>{{overview}}</p>
+    <div class="homepage-card1">
+      <p>Release Date: {{release}}</p>
+    </div>
+  </div>
+</div>
+{{/each}}

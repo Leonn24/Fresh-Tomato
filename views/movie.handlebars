@@ -1,4 +1,5 @@
 <div class="movie">
+  
   <h3>{{title}}</h3>
   <input type="hidden" value="{{id}}" class="movieId" />
   <img src={{poster}}>
@@ -8,9 +9,10 @@
   <p>Release Year: {{released}}</p>
   <p>IMDB Rating: {{imdb_rating}}</p>
 
-
   <h3>Rate this Movie</h3>
+
   <div class="rating">
+
     <form class="review-movie">
       <input type="radio" name="rating" value="1" />
       <input type="radio" name="rating" value="2" />
@@ -18,10 +20,12 @@
       <input type="radio" name="rating" value="4" />
       <input type="radio" name="rating" value="5" />
       </select>
+
   </div>
+
   <button type="submit">Submit Rating</button>
+
   </form>
-
-
 </div>
+
 <script src="/js/review.js"></script>

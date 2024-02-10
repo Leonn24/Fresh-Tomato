@@ -2,26 +2,24 @@
 
 {{!-- {{#*inline "pageTitle"}}User Profile{{/inline}} --}}
 
-{{!-- {{#*inline "body"}} --}}
-  <section class="user-profile">
-    {{!-- <h2>Welcome, {{user.name}}!</h2> --}}
-    <h2>Welcome, {{user.name}}!</h2>
-    
-    <h3>Your Reviews</h3>
-    {{!-- {{#if user.reviews.length}}
-      <ul class="user-reviews-list">
-        {{#each user.review}}
-          <li>
-            <p>Movie: {{movie.title}}</p>
-            <p>Rating: {{review.movie.review}}/5</p>
-            <p>{{comment}}</p>
-            <a href="/profile/edit-review/{{id}}">Edit</a>
-            <a href="/profile/delete-review/{{id}}">Delete</a>
-          </li>
-        {{/each}}
-      </ul>
-    {{else}} --}}
-      <p>No reviews yet. Start reviewing movies!</p>
-    {{!-- {{/if}} --}}
-  </section>
-{{!-- {{/inline}} --}}
+
+<section class="user-profile">
+  {{!-- <h2>Welcome, {{user.name}}!</h2> --}}
+  {{!-- <h2>Welcome, {{userReviews.user.name}}!</h2> --}}
+
+  <h3>Your Reviews</h3>
+  {{#if userReviews.length}}
+  <div class="user-reviews-list">
+    {{#each userReviews as |review|}}
+    <div class="movie">
+      <h2>Movie: {{review.movie.title}}</h2>
+      <img class="movie-poster" src="{{review.movie.poster}}" alt="">
+      <p>Rating: {{review.movie_review}}/5</p>
+      <a href="/profile/delete-review/{{id}}">Delete</a>
+    </div>
+    {{/each}}
+  </div>
+  {{else}}
+  <p>No reviews yet. Start reviewing movies!</p>
+  {{/if}}
+</section>
