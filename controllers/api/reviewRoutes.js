@@ -3,10 +3,6 @@ const router = express.Router();
 const { Review, Movie, User } = require('../../models');
 const sequelize = require('../../config/connection');
 
-
-
-
-
 router.post('/:movieId', async (req, res) => {
 //    const userId = req.params.userId
    const movieId = req.params.movieId
