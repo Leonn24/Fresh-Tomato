@@ -4,23 +4,34 @@
 }
 
 /* Carousel item */
-.carousel-item {
-  height: 95vh; /* Set the height of the carousel item to 100% of the viewport height */
+/* .carousel-item {
+  height: 95vh; 
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 /* Movie card container */
-.movie-card {
+#myCarousel {
   max-width: 524px; 
   width: 100%;
-  padding: 20px; /* Add padding for spacing */
-  background: #fff; /* Set background color of movie card */
-  border-radius: 8px; /* Add border radius for rounded corners */
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-  text-align: center;
+  padding: 20px; 
+  background: #fff; 
+  border-radius: 8px; 
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); 
+}
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.indicator-item {
+  border-top: 10px solid #fff !important; 
+    border-bottom: 10px solid #fff!important;
+    background-color: gray!important;
 }
 
 /* Movie poster image */
