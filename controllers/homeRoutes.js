@@ -109,7 +109,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
 
         const userReviews = reviewData.map((review) => review.get({ plain: true }))
-        // console.log(userReviews);
+      
         res.render('profile', {
             userReviews,
             logged_in: req.session.logged_in

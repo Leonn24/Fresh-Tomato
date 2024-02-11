@@ -19,20 +19,6 @@ Review.init(
                 min: 1,
             }
         }
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id',
-        //     }
-        // },
-        // movie_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'movie',
-        //         key: 'id',
-        //     }
-        // }
     },
     {
         sequelize,
