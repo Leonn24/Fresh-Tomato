@@ -1,5 +1,7 @@
 <div class="movie">
-  
+  {{#each favourites as |favourite|}}
+    <input type="hidden" class="existing-favourite-movie-id" value={{favourite.imdb_id}} />
+  {{/each}}
   <h3>{{title}}</h3>
   <input type="hidden" value="{{id}}" class="movieId" />
   <img src={{poster}}>
@@ -24,8 +26,12 @@
   </div>
 
   <button type="submit">Submit Rating</button>
-
+  </form>
+  <form class="favourite-form">
+    <input type="hidden" id="movie-id" value={{imdb_id}} />
+   <button id="favourites-button" type="submit">Add to favourites</button>
   </form>
 </div>
 
+<script src="/js/favourite.js"></script>
 <script src="/js/review.js"></script>
