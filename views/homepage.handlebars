@@ -1,99 +1,23 @@
-{{!-- <div class="main-homepage">
-  <h1>Trending Movies</h1>
-  <style>
-    .carousel-item {
-      height: 32rem;
-      background: #777;
-      position: relative;
-    }
-
-    .container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding-bottom: 50px;
-    }
-  </style>
-
-
-
+<div class="main-homepage">
+  <div class="carousel-wrapper">
   <div id="myCarousel" class="carousel slide">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
-        aria-current="true"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"></button>
+      {{#each movies}}
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="{{@index}}" class="indicator-item{{#if @first}} active{{/if}}"  aria-current="{{@index}}"></button>
+      {{/each}}
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="container">
-          <h1>Example</h1>
-          <a href="#" class="btn btn-lg btn-primary">
-            Add to Watch Later
-          </a>
+      {{#each movies}}
+      <div class="carousel-item {{#if @first}}active{{/if}}">
+        <div>
+          <h2>{{this.title}}</h2>
+          <img src="https://image.tmdb.org/t/p/w500{{this.poster_path}}" alt="{{this.title}}">
+          <p>{{this.overview}}</p>
+          <p>Release Date: {{this.release}}</p>
         </div>
       </div>
-      <div class="carousel-item">
-        <div class="container">
-          <h1>Example</h1>
-          <a href="#" class="btn btn-lg btn-primary">
-            Add to Watch Later
-          </a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container">
-          <h1>Example</h1>
-          <a href="#" class="btn btn-lg btn-primary">
-            Add to Watch Later
-          </a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container">
-          <h1>Example</h1>
-          <a href="#" class="btn btn-lg btn-primary">
-            Add to Watch Later
-          </a>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="container">
-          <h1>Example</h1>
-          <a href="#" class="btn btn-lg btn-primary">
-            Add to Watch Later
-          </a>
-        </div>
-      </div>
+      {{/each}}
     </div>
-  </div>
-</div> --}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../public/js/css/style.css">
-  <title>Fresh-Tomato</title>
-</head>
-<body>
-  {{#each movies}}
-<div class="movie-card">
-  <h2>{{title}}</h2>
-  <img class="movie-p" src='https://image.tmdb.org/t/p/w500{{poster}}' alt='{{title}}'>
-  <div class="homepage-card">
-    <p>{{overview}}</p>
-    <div class="homepage-card1">
-      <p>Release Date: {{release}}</p>
     </div>
   </div>
 </div>
-{{/each}} 
-</body>
-</html>
-
-
-

@@ -1,18 +1,28 @@
-
-<section class="user-profile">
-
-  <h3>Your Reviews</h3>
-  {{#if userReviews.length}}
-  <div class="user-reviews-list">
-    {{#each userReviews as |review|}}
-    <div class="movie">
-      <h2>Movie: {{review.movie.title}}</h2>
-      <img class="movie-poster" src="{{review.movie.poster}}" alt="">
-      <p>Rating: {{review.movie_review}}/5</p>
-    </div>
-    {{/each}}
-  </div>
-  {{else}}
-  <p>No reviews yet. Start reviewing movies!</p>
-  {{/if}}
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <section class="user-profile">
+        <h3>Your Reviews</h3>
+        {{#if userReviews.length}}
+            <div class="user-reviews-list">
+                {{#each userReviews as |review|}}
+                    <div class="movie">
+                        <h2>Movie: {{review.movie.title}}</h2>
+                        <img class="movie-poster" src="{{review.movie.poster}}" alt="">
+                        <p>Rating: {{review.movie_review}}/5</p>
+                        <a class="btn btn-delete" href="/profile/delete-review/{{id}}">Delete</a>
+                    </div>
+                {{/each}}
+            </div>
+        {{else}}
+            <p>No reviews yet. Start reviewing movies!</p>
+        {{/if}}
+    </section>
+</body>
+</html>

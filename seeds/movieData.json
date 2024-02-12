@@ -7,7 +7,7 @@
         "released": "21 Jul 2023",
         "poster":"https://m.media-amazon.com/images/M/MV5BOTI1ZjI3MDctMzFmOC00NTZkLWI3ZjUtODMzNmI4MzM1NmRkXkEyXkFqcGdeQXVyNjQzMDEyOTI@._V1_SX300.jpg",
         "imdb_rating": "8.4",
-        "imbd_id": "tt15398776"
+        "imdb_id": "tt15398776"
     },
     {
         "title": "Barbie",
@@ -17,7 +17,7 @@
         "released": "21 Jul 2023",
         "poster": "https://m.media-amazon.com/images/M/MV5BNDMzZmFiZTEtZjBlZi00MDQ0LWIxNDItNjkzNmY1YjllZjVlXkEyXkFqcGdeQXVyODc5Mjc4Nzg@._V1_SX300.jpg",
         "imdb_rating": "6.9",
-        "imbd_id": "tt1517268"
+        "imdb_id": "tt1517268"
     },
     {
         "title": "Everything Everywhere All at Once",
@@ -28,7 +28,7 @@
         
         "poster": "https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00NjZlLWIyMTgtYzk5Y2M3ZDVmMDk1XkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_SX300.jpg",
         "imdb_rating": "7.8",
-        "imbd_id": "tt6710474"
+        "imdb_id": "tt6710474"
     },
     {
         "title": "Dune",
@@ -38,6 +38,6 @@
         "released": "22 Oct 2021",
         "poster": "https://m.media-amazon.com/images/M/MV5BMDQ0NjgyN2YtNWViNS00YjA3LTkxNDktYzFkZTExZGMxZDkxXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
         "imdb_rating": "8.0",
-        "imbd_id": "tt1160419"
+        "imdb_id": "tt1160419"
     }
 ]
