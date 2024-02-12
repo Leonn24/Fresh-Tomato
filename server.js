@@ -40,8 +40,10 @@ app.get('/', async (req, res) => {
 
 app.use(session(sess));
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
