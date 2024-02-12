@@ -18,7 +18,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/homepage">Home</a>
+              
+              {{!-- change href when deployed on Heroku --}}
+              <a class="nav-link active" aria-current="page" href="http://localhost:3001/">Home</a>
             </li>
             <li class="nav-item">
 
@@ -49,6 +51,9 @@
       </div>
     </nav>
 
+
+
+
     {{!-- <form class="login-form">
       <input id="email-login" name="email"></input>
       <input id="password-login" name="password" />
@@ -58,7 +63,7 @@
       {{{body}}}
     </div>
 
-    <script src="./js/index.js"></script>
+    <script src="/js/index.js"></script>
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
 
@@ -72,3 +77,5 @@
   </body>
 
 </html>
+
+

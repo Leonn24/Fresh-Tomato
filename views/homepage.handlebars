@@ -71,9 +71,16 @@
     </div>
   </div>
 </div> --}}
-
-
-{{#each movies}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../public/js/css/style.css">
+  <title>Fresh-Tomato</title>
+</head>
+<body>
+  {{#each movies}}
 <div class="movie-card">
   <h2>{{title}}</h2>
   <img class="movie-p" src='https://image.tmdb.org/t/p/w500{{poster}}' alt='{{title}}'>
@@ -84,4 +91,9 @@
     </div>
   </div>
 </div>
-{{/each}}
+{{/each}} 
+</body>
+</html>
+
+
+

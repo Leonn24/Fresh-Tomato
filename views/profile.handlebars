@@ -1,11 +1,5 @@
-{{!-- {{> layouts/main}} --}}
-
-{{!-- {{#*inline "pageTitle"}}User Profile{{/inline}} --}}
-
 
 <section class="user-profile">
-  {{!-- <h2>Welcome, {{user.name}}!</h2> --}}
-  {{!-- <h2>Welcome, {{userReviews.user.name}}!</h2> --}}
 
   <h3>Your Reviews</h3>
   {{#if userReviews.length}}
@@ -15,7 +9,6 @@
       <h2>Movie: {{review.movie.title}}</h2>
       <img class="movie-poster" src="{{review.movie.poster}}" alt="">
       <p>Rating: {{review.movie_review}}/5</p>
-      <a href="/profile/delete-review/{{id}}">Delete</a>
     </div>
     {{/each}}
   </div>

@@ -53,13 +53,13 @@ router.get('/movie/search/:movie', async (req, res) => {
             const existingMovie = await Movie.findOne({ where: { imdb_id: movie.imdb_id } });
             if (!existingMovie) {
                 const newMovie = await Movie.create(movie);
-                console.log(newMovie)
+                // console.log(newMovie)
                 res.render('movie', {
                     ...newMovie.dataValues,
                     logged_in: req.session.logged_in
                 });
             } else {
-                console.log('existing movie', existingMovie)
+                // console.log('existing movie', existingMovie)
                 res.render('movie', {
                     ...existingMovie.dataValues,
                     logged_in: req.session.logged_in
@@ -130,6 +130,10 @@ router.get('/login', (req, res) => {
 
 
 router.get('/homepage', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/profile');
+        return;
+    }
     res.render('homepage');
 });
 

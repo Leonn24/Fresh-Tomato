@@ -13,10 +13,10 @@ Review.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-Movie.belongsTo(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-})
+// Movie.belongsTo(User, {
+//     foreignKey: 'user_id',
+//     onDelete: 'CASCADE'
+// })
 
 module.exports = { User, Review, Movie };
 
