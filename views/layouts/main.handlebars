@@ -25,7 +25,7 @@
               <a class="nav-link" href="/profile">My Reviews</a>
 
             </li>
-            {{#if logged_in}}
+            {{!-- {{!-- {{#if logged_in}}
 
             <div class="nav-item">
               <p class="nav-link" id="logout">Logout</a>
@@ -34,9 +34,15 @@
             {{else}}
             <div class="nav-item">
               <a class="nav-link" aria-current="page" href="/login">login</a>
-            </div>
+            </div> --}}
 
+{{!-- 
+            {{/if}} --}}
 
+            {{#if logged_in}}
+            <a class="nav-link" aria-current="page" href="/logout">Logout</a>
+            {{else}}
+            <a class="nav-link" aria-current="page" href="/login">Login</a>
             {{/if}}
           </ul>
 
@@ -61,8 +67,8 @@
     <script src="./js/index.js"></script>
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
-
     {{/if}}
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"></script>

@@ -128,6 +128,13 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// Logout route
+router.get('/logout', (req, res) => {
+    req.session.destroy(() => {
+        res.redirect('/'); // Redirect to the homepage or login page after logout
+    });
+});
+
 
 router.get('/homepage', (req, res) => {
     res.render('homepage');
