@@ -21,12 +21,14 @@ router.get('/', async (req, res) => {
             release: movie.release_date,
             id: movie.id
         }));
+
+
         res.render('homepage', {
             movies,
             logged_in: req.session.logged_in
         });
     } catch (err) {
-
+       
     }
 });
 
@@ -128,16 +130,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-// Logout route
+
 router.get('/logout', (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/'); // Redirect to the homepage or login page after logout
+        res.redirect('/'); 
     });
 });
-
 
 router.get('/homepage', (req, res) => {
     res.render('homepage');
 });
+
 
 module.exports = router;
