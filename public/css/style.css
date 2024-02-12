@@ -1,18 +1,8 @@
 .main-homepage {
   background: #000; 
-  padding: 20px; /* Add padding for spacing */
+  padding: 20px; 
 }
 
-/* Carousel item */
-/* .carousel-item {
-  height: 95vh; 
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* Movie card container */
 #myCarousel {
   max-width: 524px; 
   width: 100%;
@@ -34,37 +24,158 @@
     background-color: gray!important;
 }
 
-/* Movie poster image */
+
 .movie-p {
-  width: 100%; /* Ensure the image fills the entire width */
-  height: auto; /* Auto height to maintain aspect ratio */
-  border-radius: 8px; /* Add border radius for rounded corners */
-  margin-bottom: 20px; /* Add spacing below the image */
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+  margin-bottom: 20px; 
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Movie title */
+
 .movie-title {
-  font-size: 24px; /* Set font size for title */
-  font-weight: bold; /* Set font weight for emphasis */
-  margin-bottom: 10px; /* Add spacing below the title */
+  font-size: 24px; 
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* Movie overview */
+
 .movie-overview {
-  font-size: 16px; /* Set font size for overview */
-  color: #666; /* Set color for overview text */
-  margin-bottom: 20px; /* Add spacing below the overview */
+  font-size: 16px; 
+  color: #666; 
+  margin-bottom: 20px; 
 }
 
-/* Movie release date */
+
 .release-date {
-  font-size: 14px; /* Set font size for release date */
-  color: #999; /* Set color for release date text */
+  font-size: 14px; 
+  color: #999; 
 }
 
+body {
+  background-color: #000;
+}
 
+.row {
+  margin: 50px auto;
+  width: 80%;
+}
 
+.login-heading, 
+.signup-class {
+  color: #fff
+}
 
+.form-group {
+  margin-bottom: 20px;
+}
+ 
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
 
+.btn:hover {
+  background-color: #ff7043;
+}
 
+.favourite-body {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+}
+
+.favourites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.poster {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.details {
+  padding: 20px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.overview {
+  color: #666;
+}
+
+.release, .id {
+  color: #999;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.user-profile {
+  margin: 50px auto;
+  width: 80%;
+}
+
+h3 {
+  color: #fff;
+}
+
+.user-reviews-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px; 
+}
+
+.movie {
+  width: 300px;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.movie-poster {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.movie h2, .movie p {
+  color: #fff;
+  padding: 15px; 
+  font-size: 18px; 
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5722; 
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #ff7043; 
+}

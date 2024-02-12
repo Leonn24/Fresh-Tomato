@@ -1,11 +1,24 @@
-<div class="favourites">
-  {{#each favourites as |favourite|}}
-    <div>
-    <p>{{favourite.title}}</p>
-    <p>{{favourite.overview}}</p>
-    <p>{{favourite.poster}}</p>
-    <p>{{favourite.release}}</p>
-    <p>{{favourite.id}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Movies</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="favourite-body">
+    <div class="favourites">
+        {{#each favourites as |favourite|}}
+            <div class="movie">
+                <img class="poster" src="{{favourite.poster}}" alt="{{favourite.title}}">
+                <div class="details">
+                    <h2 class="title">{{favourite.title}}</h2>
+                    <p class="overview">{{favourite.overview}}</p>
+                    <p class="release">Release Date: {{favourite.release}}</p>
+                    <p class="id">ID: {{favourite.id}}</p>
+                </div>
+            </div>
+        {{/each}}
     </div>
-  {{/each}}
-</div>
+</body>
+</html>
