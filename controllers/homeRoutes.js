@@ -187,7 +187,7 @@ const getMovieFromImdb = async (movieId) => {
       release: movie.release_date,
       id: movie.id,
     }));
-
+    console.log(movie);
     return movie[0];
 }
 

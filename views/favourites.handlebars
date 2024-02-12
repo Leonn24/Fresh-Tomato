@@ -10,7 +10,7 @@
     <div class="favourites">
         {{#each favourites as |favourite|}}
             <div class="movie">
-                <img class="poster" src="{{favourite.poster}}" alt="{{favourite.title}}">
+                <img class="poster" src="https://image.tmdb.org/t/p/w500{{favourite.poster}}" alt="{{favourite.title}}">
                 <div class="details">
                     <h2 class="title">{{favourite.title}}</h2>
                     <p class="overview">{{favourite.overview}}</p>
