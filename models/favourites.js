@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Review extends Model { }
+class Favourite extends Model { }
 
-Review.init(
+Favourite.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,20 +11,16 @@ Review.init(
             primaryKey: true,
             autoIncrement: true
         },
-        movie_review:
+        imdb_id:
         {
-            type: DataTypes.INTEGER,
-            validate: {
-                max: 5,
-                min: 1,
-            }
+            type: DataTypes.STRING,
         }
     },
     {
         sequelize,
         underscored: true,
-        modelName: 'Review',
+        modelName: 'Favourite',
     }
 )
 
-module.exports = Review;
+module.exports = Favourite;

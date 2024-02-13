@@ -1,6 +1,15 @@
-<div class="row">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="row">
     <div class="col-md-6">
-        <h2>Login</h2>
+        <h2 class="login-heading">Login</h2>
 
         <form class="form login-form">
             <div class="form-group">
@@ -18,20 +27,20 @@
     </div>
 
     <div class="col-md-6">
-        <h2>Signup</h2>
+        <h2 class="signup-class">Signup</h2>
 
         <form class="form signup-form">
             <div class="form-group">
                 <label for="name-signup">Name:</label>
-                <input class="form-input" type="text" id="name-signup" name="name" required />
+                <input class="form-input name-class" type="text" id="name-signup" name="name" required />
             </div>
             <div class="form-group">
                 <label for="email-signup">Email:</label>
-                <input class="form-input" type="text" id="email-signup" name="email" required />
+                <input class="form-input email-class" type="text" id="email-signup" name="email" required />
             </div>
             <div class="form-group">
                 <label for="password-signup">Password:</label>
-                <input class="form-input" type="password" id="password-signup" name="password" required />
+                <input class="form-input password-class" type="password" id="password-signup" name="password" required />
             </div>
             <div class="form-group">
                 <button class="btn btn-primary" type="submit">Signup</button>
@@ -41,3 +50,7 @@
 </div>
 
 <script src="/js/login.js"></script>
+</body>
+</html>
+
+

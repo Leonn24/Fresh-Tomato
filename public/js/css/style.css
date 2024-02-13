@@ -23,7 +23,7 @@ div .rating {
 
 .user-reviews-list {
   display: flex;
-  flex-wrap: wraps;
+  flex-wrap: wrap;
 }
 
 .movie {
@@ -49,4 +49,7 @@ div .rating {
   text-align: center;
   margin: 10px;
 }
+
+
+
 

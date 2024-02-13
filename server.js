@@ -4,7 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
-
+const { fetchTrendingMovies } = require('./utils/movieApi');
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -28,10 +28,22 @@ const sess = {
   }),
 };
 
+app.get('/', async (req, res) => {
+  try {
+    const movies = await fetchTrendingMovies();
+    res.render('homepage', { movies });
+  } catch (error) {
+    console.error('Error rendering homepage:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 app.use(session(sess));
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
