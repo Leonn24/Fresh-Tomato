@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
       // If successful, redirect the browser to the profile page
       document.location.replace('/profile');
       
-    }else if(response.status === 401){
+    }else if(response.status === 400){
       alert('Password incorrect')
     } else {    
       alert(response.statusText);
