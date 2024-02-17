@@ -1,26 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searched Movies</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
 <div class="movie">
   {{#each favourites as |favourite|}}
     <input type="hidden" class="existing-favourite-movie-id" value={{favourite.imdb_id}} />
   {{/each}}
-  <h3>{{title}}</h3>
+  <h3 class="search-movie-title">{{title}}</h3>
   <input type="hidden" value="{{id}}" class="movieId" />
   <img src={{poster}}>
-  <p>Genre: {{genre}}</p>
-  <p>Actors: {{actors}}</p>
-  <p>Plot: {{plot}}</p>
-  <p>Release Year: {{released}}</p>
-  <p>IMDB Rating: {{imdb_rating}}</p>
+  <p class="search-genre">Genre: {{genre}}</p>
+  <p class="search-actors">Actors: {{actors}}</p>
+  <p class="search-plot">Plot: {{plot}}</p>
+  <p class="search-release">Release Year: {{released}}</p>
+  <p class="search-rating">IMDB Rating: {{imdb_rating}}</p>
 
-  <h3>Rate this Movie</h3>
+  <h3 class="rating-movie-indic">Rate this Movie</h3>
 
   <div class="rating">
 
-    <form class="review-movie">
-      <input type="radio" name="rating" value="1" />
-      <input type="radio" name="rating" value="2" />
-      <input type="radio" name="rating" value="3" />
-      <input type="radio" name="rating" value="4" />
-      <input type="radio" name="rating" value="5" />
+    <form class="movie-rating-input">
+      <input type="radio" name="rating" value="1" class="rating-input" />
+      <input type="radio" name="rating" value="2" class="rating-input" />
+      <input type="radio" name="rating" value="3" class="rating-input" />
+      <input type="radio" name="rating" value="4" class="rating-input" />
+      <input type="radio" name="rating" value="5" class="rating-input" />
       </select>
 
   </div>
