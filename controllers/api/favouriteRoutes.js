@@ -3,10 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-  // TODO: add validation to user session
-  // if (!req.session.logged_in) {
-  //   res.status(405).json({ error: "Not Logged in"})
-  // }
 
   try {
     Favourite.create({
@@ -22,10 +18,6 @@ router.post('/', async (req, res) => {
 });
 
 router.delete('/:movieId', async (req, res) => {
-  // TODO: add validation to user session
-  // if (!req.session.logged_in) {
-  //   res.status(405).json({ error: "Not Logged in"})
-  // }
 
   try {
     Favourite.destroy({

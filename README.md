@@ -22,7 +22,12 @@ Then I am able to view the movie I added to it on a separate page
 
 ## Screenshots
 
+![main](./public/images/mainscreen.png)
+![login](./public/images/loginscreen.png)
+![fav](./public/images/favscreen.png)
+![review](./public/images/reviewscreen.png)
 
 ## Links
  - [GitHub Repo](https://github.com/Leonn24/Project-2)
  
+ - [Heroku Link](https://pacific-lake-51956-e963fe4b26f5.herokuapp.com/)

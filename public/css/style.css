@@ -179,3 +179,55 @@ h3 {
 .btn:hover {
   background-color: #ff7043; 
 }
+.movie img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.movie h3 .search-movie-title {
+  font-size: 24px; 
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 15px;
+}
+
+.movie p {
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.movie-review {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.movie-rating-input {
+  display: flex;
+  justify-content: center;
+
+}
+
+.rating-input {
+  margin: 0 5px;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5722;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+button[type="submit"]{
+  background-color: #ff7043;
+}
